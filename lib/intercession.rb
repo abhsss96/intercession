@@ -4,7 +4,7 @@ module Intercession
   VERSION = "3.0.0"
 
   def self.included klass
-    klass.append_after_filter :intercede_after
+    klass.append_after_action :intercede_after
 
     ks =  []
     ks << ActionDispatch::Session::AbstractStore::SessionHash rescue nil
